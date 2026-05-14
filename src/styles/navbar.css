@@ -1,0 +1,103 @@
+/* Navbar Main Container */
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: none;   
+    padding: 0 40px; 
+}
+
+/* Logo Styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ff6600; /* สีแสด มทส. */
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.brand-sub {
+  color: #2e7d32; /* สีเขียว รพ.มทส. */
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Menu Items */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  gap: 32px;
+}
+
+.nav-links {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links:hover {
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+  padding-bottom: 4px;
+}
+
+/* Button Styling */
+.btn-help {
+  padding: 8px 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-help:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+/* Responsive (ตัวอย่างสำหรับจอเล็ก) */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none; /* ซ่อนเมนูในจอมือถือ (สามารถเพิ่ม Hamburger Menu ได้ภายหลัง) */
+  }
+}

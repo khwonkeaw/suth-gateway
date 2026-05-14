@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+/* ใช้ Google Fonts (Sarabun) */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+* {
+  font-family: 'Sarabun', sans-serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-size: 18px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* General Layout */
+.gateway-container {
+ background: linear-gradient(
+      rgba(255, 255, 255, 0.4), 
+      rgba(240, 248, 255, 0.6)  
+    ),
+    url('./assests/images/BG1.png');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-.App-header {
-  background-color: #282c34;
+  /* 2. การตั้งค่าโครงสร้าง */
+  font-family: 'Kanit', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
+  /* เพิ่ม Smooth Transition เวลาโหลดหน้าเว็บ */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero-section {
+ padding: 30px 20px 20px;
+  text-align: center;
+  text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+  color: #334155;
+  font-size: 4.0rem;  
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  color: #64748b;
+  font-size: 1.5rem;
+}
+
+/* Card Selection Area */
+.card-selection {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto 60px;
+}
+
+/* Individual Card Styling */
+.system-card {
+  background: white;
+  text-decoration: none;
+  width: 450px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  top: 0;
+}
+
+.card-logo-img {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.suthie-logo {
+  width: 240px;   /* เดิม 160px → เพิ่ม */
+  height: auto;
+}
+
+.system-card:hover {
+ top: -8px; 
+  border-color: #004a99 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+.system-card:hover .btn-enter {
+ color: #004a99; 
+  animation: bounceLeftRight 0.8s ease-in-out infinite;
+}
+.care-side:hover, .admin-side:hover {
+  border-color: #004a99;
+}
+
+.card-icon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 140px;
+  height: 100%;
+  background: transparent;
+  padding: 0;
+  text-align: right;
 }
 
-.App-link {
-  color: #61dafb;
+.card-content h2 {
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-content p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+@keyframes bounceLeftRight {
+  0%, 100% {
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(8px); 
+  }
+}
+/* Brand Colors for Cards */
+.care-side:hover {
+  border-color: #2e7d32;
+}
+
+.admin-side:hover {
+  border-color: #ff6600;
+}
+
+.btn-enter {
+  font-weight: 600;
+  color: #94a3b8;
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 0.85rem;
+}
+
+/* Footer Styling */
+.simple-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .system-card {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 }
